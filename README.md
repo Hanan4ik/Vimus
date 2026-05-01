@@ -1,10 +1,22 @@
 # VIMRC Configuration
 
-This repository contains a customized `.vimrc` configuration designed for an efficient and visually organized editing experience[cite: 1]. It features the `onedark` colorscheme, automated file execution, and enhanced navigation mappings[cite: 1].
+This repository contains a customized `.vimrc` configuration designed for an efficient and visually organized editing experience. It features the `onedark` colorscheme, automated file execution, and enhanced navigation mappings.
 
 ---
+## Screenshots
 
-## 🚀 Key Features
+![Demonstation](screenshots/photo_2026-05-01_13-10-29.jpg)
+
+## Quick Start
+
+
+1. `git clone https://github.com/Hanan4ik/Vimus.git`
+2. `cd Vimus`
+3. `chmod +x install.sh`
+4. `./install.sh`
+5. **Enjoy**
+
+## Key Features
 
 *   **Syntax & File Handling**: Enables syntax highlighting, file type detection, and automatic indentation[cite: 1].
 *   **Search Optimization**: Supports incremental search with smart case sensitivity (`smartcase`) and vertical centering (`zz`) when jumping between matches[cite: 1].
