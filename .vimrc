@@ -124,8 +124,12 @@ nnoremap Y y$
 " Map the F5 key to run a code inside Vim.
 " We map F5 to a chain of commands here.
 " <CR> (carriage return) is like pressing the enter key.
-
 nnoremap <f5> :w<CR>:call RunByExt()<CR>
+inoremap <f5><f5> <ESC>:w<CR>:call RunByExt()<CR>
+
+" Map the F6 key to commit changes inside Vim
+nnoremap <f6> :w<CR>:call CommitFile()<CR>
+inoremap <f6><f6> <ESC>:w<CR>:call CommitFile()<CR>
 
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
@@ -156,15 +160,20 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 
 function! RunByExt()
     let ext = expand('%:e')
+    execute '!clear'
     if ext ==# 'py'
         execute '!python3 %'
     elseif ext ==# 'c'
-        execute '!gcc -lm && ./a.out'
+        execute '!gcc -lm % && ./a.out'
     elseif ext ==# 'cpp'
         execute '!g++ % && ./a.out'
     else
         execute '!echo "Not implemented filetype. Please implement in .vimrc file"'
     endif
+endfunction
+
+function! CommitFile()
+    execute '!git add % && git commit'
 endfunction
 
 augroup filetype_vim
