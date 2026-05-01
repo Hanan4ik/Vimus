@@ -3,12 +3,14 @@
 cp .vimrc ~/
 
 if [[ ! -e ~/.vim/ ]] then
-    mkdir ~/.vim    
+    mkdir ~/.vim
+fi
 if [[ ! -e ~/.vim/autoload ]] then
     mkdir ~/.vim/autoload
-if [[ ! -e ~/.vim/colors ]]
+fi
+if [[ ! -e ~/.vim/colors ]] then
     mkdir ~/.vim/colors
-
+fi
 cp .vim/autoload/onedark.vim ~/.vim/autoload/
 cp .vim/autoload/plug.vim ~/.vim/autoload/
 cp .vim/colors/onedark.vim ~/.vim/colors/
